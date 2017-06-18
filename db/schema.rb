@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170613160818) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.text "description"
     t.string "address"
     t.datetime "held_at"
     t.bigint "service_id"

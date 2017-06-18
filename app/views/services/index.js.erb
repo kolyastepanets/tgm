@@ -1,0 +1,5 @@
+var url = event.target.responseURL
+var serviceId = url.substr(url.indexOf("=") + 1);
+$('.task__service-type div').removeClass('round-selected-task-type-service');
+$('#' + serviceId + ' div').addClass('round-selected-task-type-service');
+$('#task-services').html("<%= j (render 'services') %>");

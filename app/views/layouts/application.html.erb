@@ -3,9 +3,11 @@
   <head>
     <title>Tgm</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <% if Rails.env.production? %>
+      <script src="//maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_api_key %>"></script>
+    <% end %>
+    <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -41,17 +43,14 @@
                   <li>
                     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
                   </li>
-                  <li>
-                    <%= link_to('Profile', root_path)%>
-                  </li>
                 </ul>
               </li>
             <% end %>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
-    <div class="container">
+    <div class="container" id="map-container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
           <a href="#" data-dismiss="alert" class="close">×</a>
@@ -62,6 +61,8 @@
             </ul>
         </div>
       <% end %>
+    </div>
+    <div id="over_map">
       <%= yield %>
     </div>
 

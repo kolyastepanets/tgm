@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
-  TYPES = ['Electrician', 'Plumber', 'Gardener', 'Housekeeper', 'Cook'].freeze
+  TYPES = ['electrician', 'plumber', 'gardener', 'housekeeper', 'cook'].freeze
 
   has_many :tasks
 

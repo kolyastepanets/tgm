@@ -1,3 +1,134 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#task-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.modal-dialog, .modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 450px;
+  height: 100%;
+  margin-top: 54px;
+}
+.modal-content, .modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+.modal-body {
+  padding: 0;
+}
+.modal.right.fade .modal-dialog {
+  right: -450px;
+}
+.modal.right.fade.in .modal-dialog {
+  right: 0;
+}
+.modal-backdrop {
+  background-color: none;
+}
+.modal-content {
+  border-radius: 0;
+  border: none;
+}
+.modal-header {
+  border-bottom-color: #EEEEEE;
+  background-color: #FAFAFA;
+}
+.new-task-btn {
+  width: 220px;
+  color: #4C71FE;
+  text-transform: uppercase;
+  background-color: white;
+}
+.new-task-btn:before {
+  content: "+";
+  margin-right: 4px;
+}
+.task-held-at-time {
+  margin-bottom: 0;
+  color: lightgray;
+  font-size: 12px;
+  padding: 5px 5px 0 5px;
+}
+.task-title {
+  padding: 5px 5px 0 5px;
+  margin-bottom: 0;
+  width: 180px;
+}
+.task-run-btns {
+  padding: 5px;
+}
+.task-run-btn {
+  background-color: #4C71FE;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+  padding: 4px 3px;
+}
+.new-task-modal__subtitle {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: gray;
+  margin-bottom: 10px;
+}
+.task-wrapper {
+  background-color: white;
+  width: 220px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 1px grey;
+  margin-top: 10px;
+}
+.task__form-info {
+  border-bottom: 1px solid lightgray;
+  padding: 20px 20px 5px 20px;
+  .task__service-type {
+    margin-left: 10px;
+    display: inline-block;
+    .task__service-type-name {
+      font-size: 11px;
+      margin-top: 5px;
+      text-align: center;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    div {
+      min-width: 70px;
+      min-height: 50px;
+    }
+    img {
+      display: block;
+      margin: 10px auto;
+    }
+  }
+  .task__service-type:nth-child(2) {
+    margin-left: 0;
+  }
+}
+.task-description {
+  cursor: pointer;
+}
+#task-services {
+  div {
+    display: inline-block;
+    p {
+      padding: 5px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}
+.round-selected-task-service {
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.round-selected-task-type-service {
+  border: 1px solid #4C71FE;
+  border-radius: 40px;
+}
+.task-input-description {
+  min-width: 300px;
+  border-radius: 2px;
+}
