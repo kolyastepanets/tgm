@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20170613160818) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.string "address"
-    t.datetime "held_at"
+    t.float "longtitude"
+    t.float "latitude"
     t.bigint "service_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

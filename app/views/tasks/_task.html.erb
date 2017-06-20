@@ -1,9 +1,9 @@
 <div class="task-wrapper" id="task-<%= task.id %>">
   <p class="task-held-at-time">
-    <%= task.held_at %>
+    <%= task.created_at %>
   </p>
   <p class="task-title">
-    <%= task.title %>
+    I need a <%= task.service.classification %> to <%= task.service.name %>
   </p>
   <p class="task-service hidden" service-name="<%= task.service.name %>" service-classification="<%= task.service.classification %>"></p>
   <p class="task-run-btns">

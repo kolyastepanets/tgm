@@ -119,16 +119,16 @@
     }
   }
 }
-.round-selected-task-service {
+.active-service {
   border: 1px solid black;
   border-radius: 20px;
   cursor: pointer;
 }
-.round-selected-task-type-service {
+.active-type-service {
   border: 1px solid #4C71FE;
   border-radius: 40px;
 }
-.task-input-description {
+#task-input-description {
   min-width: 300px;
   border-radius: 2px;
 }

@@ -1,3 +1,5 @@
-$('#task-form').html("<%= j (render 'form') %>");
-$('#task-form').animate({ "right": "450px" }, "slow" )
+// $('#task-form').html("<%= j (render(partial: 'form', locals: { title: 'UPDATE' })) %>");
+$('#task-form').html("<%= j (render(partial: 'form')) %>");
+$('#task-services').html("<%= j (render(partial: 'services/services', locals: { id: @task.service.id })) %>");
+$('#task-form').animate({ "right": "450px" }, "slow" );
 $('.run-task-btn').html('UPDATE TASK')

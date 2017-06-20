@@ -1,3 +1,7 @@
 $('#task-form').html("<%= j (render 'form') %>");
 $('#task-form').animate({ "right": "450px" }, "slow" )
 $('.run-task-btn').html('CREATE TASK')
+dniproLat = 48.463819;
+dniproLng = 35.053189;
+document.querySelector('#task_longtitude').value = dniproLng
+document.querySelector('#task_latitude').value = dniproLat

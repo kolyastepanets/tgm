@@ -15,6 +15,8 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @service_type = @task.service.classification
+    @services = Service.where(classification: @task.service.classification)
   end
 
   def update
@@ -32,6 +34,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :service_id, :address, :held_at, :service)
+    params.require(:task).permit(:title, :service_id, :longtitude, :latitude, :service)
   end
 end

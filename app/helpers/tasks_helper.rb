@@ -1,5 +1,9 @@
 module TasksHelper
-  def show_address(task)
-    task.address.present? ? task.address : 'Drag marker to choose address'
+  def active_class(service_type, current_type)
+    'active-type-service' if service_type == current_type
+  end
+
+  def task_full_title(task)
+    "I need a #{task.service.classification} to #{task.service.name}" if task.service
   end
 end

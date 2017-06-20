@@ -5,62 +5,27 @@
       <%= form_for @task, remote: true do |f|   %>
         <%= f.hidden_field :title, value: @task.title %>
         <%= f.hidden_field :service_id, value: @task.service.try(:id) %>
-        <%= f.hidden_field :held_at, value: Time.zone.now + 1.day %>
-        <%= f.hidden_field :address, value: @task.address %>
+        <%= f.hidden_field :longtitude, value: @task.longtitude %>
+        <%= f.hidden_field :latitude, value: @task.latitude %>
 
         <div class="modal-header">
           <p class="modal-title new-task-modal__subtitle" id="newTaskLabel">new task</p>
-          <p id="modal-task-title"><%= @task.title %></p>
+          <div>
+            <span id="modal-task-title"><%= task_full_title(@task) %></span> <span class="short-title"><%= @task.title %></span>
+          </div>
           <%= f.button :submit, class: 'custom-btn run-task-btn' %>
         </div>
         <div class="modal-body">
           <div class="task__form-info">
             <p class="new-task-modal__subtitle">location</p>
-            <p class="new-task-modal__address"><%= show_address(@task) %></p>
+            <p class="new-task-modal__address"></p>
           </div>
 
           <div class="task__form-info">
             <p class="new-task-modal__subtitle">service type</p>
-            <div class="task__service-type" id="electrician">
-              <%= link_to services_path(classification: 'electrician'), remote: true do %>
-                <div>
-                  <%= image_tag('electrician.svg') %>
-                </div>
-                <p class="task__service-type-name">Electrician</p>
-              <% end %>
-            </div>
-            <div class="task__service-type" id="plumber">
-              <%= link_to services_path(classification: 'plumber'), remote: true do %>
-                <div>
-                  <%= image_tag('plumber.svg') %>
-                </div>
-                <p class="task__service-type-name">Plumber</p>
-              <% end %>
-            </div>
-            <div class="task__service-type" id="gardener">
-              <%= link_to services_path(classification: 'gardener'), remote: true do %>
-                <div>
-                  <%= image_tag('gardener.svg') %>
-                </div>
-                <p class="task__service-type-name">Gardener</p>
-              <% end %>
-            </div>
-            <div class="task__service-type" id="housekeeper">
-              <%= link_to services_path(classification: 'housekeeper'), remote: true do %>
-                <div>
-                  <%= image_tag('housekeeper.svg') %>
-                </div>
-                <p class="task__service-type-name">Housekeeper</p>
-              <% end %>
-            </div>
-            <div class="task__service-type" id="cook">
-              <%= link_to services_path(classification: 'cook'), remote: true do %>
-                <div>
-                  <%= image_tag('cook.svg') %>
-                </div>
-                <p class="task__service-type-name">Cook</p>
-              <% end %>
-            </div>
+            <% Service::TYPES.each do |type| %>
+              <%= render partial: 'services/type', locals: { type: type} %>
+            <% end %>
           </div>
 
           <div class="task__form-info" id='task-services'>
@@ -69,8 +34,7 @@
           <div class="task__form-info">
             <p class="new-task-modal__subtitle">task description</p>
             <div class="task-description"></div>
-            <input type="textarea" class="task-input-description" />
-            <a class="btn-apply-task-description custom-btn">add</a>
+            <%= f.text_area :title, value: @task.title, id: 'task-input-description' %>
           </div>
         </div>
 
