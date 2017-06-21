@@ -1,7 +1,6 @@
 <div id="new-task">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <%= form_for @task, remote: true do |f|   %>
         <%= f.hidden_field :title, value: @task.title %>
         <%= f.hidden_field :service_id, value: @task.service.try(:id) %>
@@ -13,7 +12,8 @@
           <div>
             <span id="modal-task-title"><%= task_full_title(@task) %></span> <span class="short-title"><%= @task.title %></span>
           </div>
-          <%= f.button :submit, class: 'custom-btn run-task-btn' %>
+          <div id="modal-task-address"></div>
+          <%= f.button :submit, class: 'btn btn-primary run-task-btn' %>
         </div>
         <div class="modal-body">
           <div class="task__form-info">
@@ -37,9 +37,7 @@
             <%= f.text_area :title, value: @task.title, id: 'task-input-description' %>
           </div>
         </div>
-
       <% end %>
-
     </div>
   </div>
 </div>

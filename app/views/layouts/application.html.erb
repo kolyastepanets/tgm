@@ -4,8 +4,8 @@
     <title>Tgm</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <script src="//maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_api_key %>"></script>
     <% if Rails.env.production? %>
+      <script src="//maps.googleapis.com/maps/api/js?key=<%= ENV["google_api_key"] %>"></script>
     <% end %>
     <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,8 @@
         </div>
       </div>
     </nav>
-    <div class="container" id="map-container">
+    <div class="container" id="map-container"></div>
+    <div id="over_map">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
           <a href="#" data-dismiss="alert" class="close">×</a>
@@ -61,8 +62,6 @@
             </ul>
         </div>
       <% end %>
-    </div>
-    <div id="over_map">
       <%= yield %>
     </div>
 

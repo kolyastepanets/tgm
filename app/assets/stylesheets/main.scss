@@ -4,6 +4,10 @@ html, body {
   padding: 0;
   position: relative;
 }
+ul {
+  list-style: none;
+  padding: 0;
+}
 #map-container {
   min-height: 620px;
   width: 100%;
@@ -63,18 +67,6 @@ html, body {
 .container-fluid {
   padding-left: 30px;
   padding-right: 30px;
-}
-.custom-btn {
-  background-color: #4C71FE;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  text-decoration: none;
-  padding: 4px 3px;
-  cursor: pointer;
-  &:hover {
-    text-decoration: none;
-  }
 }
 .hidden {
   display: none;

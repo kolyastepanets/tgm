@@ -6,8 +6,8 @@
 .modal-dialog, .modal.right .modal-dialog {
   position: fixed;
   margin: auto;
-  width: 450px;
-  height: 100%;
+  width: 470px;
+  height: calc(100% - 54px);
   margin-top: 54px;
 }
 .modal-content, .modal.right .modal-content {
@@ -18,7 +18,7 @@
   padding: 0;
 }
 .modal.right.fade .modal-dialog {
-  right: -450px;
+  right: -470px;
 }
 .modal.right.fade.in .modal-dialog {
   right: 0;
@@ -34,6 +34,11 @@
   border-bottom-color: #EEEEEE;
   background-color: #FAFAFA;
 }
+#modal-task-address {
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 .new-task-btn {
   width: 220px;
   color: #4C71FE;
@@ -43,6 +48,9 @@
 .new-task-btn:before {
   content: "+";
   margin-right: 4px;
+}
+.new-task-modal__address {
+  font-size: 13px;
 }
 .task-held-at-time {
   margin-bottom: 0;
