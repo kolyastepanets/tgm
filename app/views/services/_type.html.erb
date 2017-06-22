@@ -1,0 +1,8 @@
+<div class="task__service-type" id="<%= type %>">
+  <%= link_to services_path(classification: type), remote: true do %>
+    <div class="<%= active_class(@service_type, type) %>">
+      <%= image_tag("#{type}.svg") %>
+    </div>
+    <p class="task__service-type-name"><%= type.camelize %></p>
+  <% end %>
+</div>

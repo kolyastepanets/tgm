@@ -1,0 +1,13 @@
+$('#task-form').html("<%= j (render(partial: 'form')) %>");
+$('#task-services').html("<%= j (render(partial: 'services/services', locals: { id: @task.service.id })) %>");
+$('#task-form').animate({ "right": "470px" }, "slow" );
+$('.run-task-btn').html('UPDATE TASK')
+
+var taskLatlng;
+
+taskLatlng = {
+  lat: parseFloat("<%= @task.latitude %>"),
+  lng: parseFloat("<%= @task.longtitude %>")
+};
+
+initMarker(taskLatlng)

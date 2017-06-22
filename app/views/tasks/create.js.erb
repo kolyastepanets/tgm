@@ -1,0 +1,6 @@
+<% if @task.valid? %>
+  $('#task-form').animate({ "right": "0" }, "slow" )
+  $('#wrapper').append('<%= j render @task %>')
+<% else %>
+  $('.modal-header').append('Please, choose service type')
+<% end %>
