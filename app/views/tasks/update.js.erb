@@ -1,0 +1,2 @@
+$('#task-form').animate({ "right": "0" }, "slow" )
+$('#wrapper #task-' + "<%= @task.id %>").replaceWith('<%= j render @task %>')

@@ -1,0 +1,10 @@
+<% if @services.exists? %>
+  <p class="new-task-modal__subtitle"><%= @services.first.classification %> tasks</p>
+  <% @services.each do |service| %>
+    <div>
+      <p class="service-name <%= active_service(id, service.id) %>" service-id="<%= service.id %>" service-name="<%= service.name %>" service-type="<%= service.classification %>"><%= service.name %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no services</p>
+<% end %>

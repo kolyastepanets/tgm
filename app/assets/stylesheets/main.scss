@@ -1,0 +1,73 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+#map-container {
+  min-height: 620px;
+  width: 100%;
+}
+#over_map {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  z-index: 99;
+}
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-default {
+  background-color: white;
+  border-color: white;
+  border-bottom-color: #e7e7e7;
+}
+.navbar-default .navbar-brand {
+  color: #FF006A;
+}
+.navbar-nav {
+  margin-left: 20px;
+}
+.active-link {
+  border-top: 2px solid black;
+}
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+ }
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+ }
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+ }
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+ }
+.container {
+  margin-left: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.hidden {
+  display: none;
+}

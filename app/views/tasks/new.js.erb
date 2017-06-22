@@ -1,0 +1,13 @@
+$('#task-form').html("<%= j (render 'form') %>");
+$('#task-form').animate({ "right": "470px" }, "slow" )
+$('.run-task-btn').html('CREATE TASK')
+var dniproMenoraLat = 48.463819;
+var dniproMenoraLng = 35.053189;
+var taskLatlng;
+
+taskLatlng = {
+  lat: dniproMenoraLat,
+  lng: dniproMenoraLng
+};
+
+initMarker(taskLatlng);

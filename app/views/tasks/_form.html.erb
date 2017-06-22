@@ -1,0 +1,43 @@
+<div id="new-task">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for @task, remote: true do |f|   %>
+        <%= f.hidden_field :title, value: @task.title %>
+        <%= f.hidden_field :service_id, value: @task.service.try(:id) %>
+        <%= f.hidden_field :longtitude, value: @task.longtitude %>
+        <%= f.hidden_field :latitude, value: @task.latitude %>
+
+        <div class="modal-header">
+          <p class="modal-title new-task-modal__subtitle" id="newTaskLabel">new task</p>
+          <div>
+            <span id="modal-task-title"><%= task_full_title(@task) %></span> <span class="short-title"><%= @task.title %></span>
+          </div>
+          <div id="modal-task-address"></div>
+          <%= f.button :submit, class: 'btn btn-primary run-task-btn' %>
+        </div>
+        <div class="modal-body">
+          <div class="task__form-info">
+            <p class="new-task-modal__subtitle">location</p>
+            <p class="new-task-modal__address"></p>
+          </div>
+
+          <div class="task__form-info">
+            <p class="new-task-modal__subtitle">service type</p>
+            <% Service::TYPES.each do |type| %>
+              <%= render partial: 'services/type', locals: { type: type} %>
+            <% end %>
+          </div>
+
+          <div class="task__form-info" id='task-services'>
+          </div>
+
+          <div class="task__form-info">
+            <p class="new-task-modal__subtitle">task description</p>
+            <div class="task-description"></div>
+            <%= f.text_area :title, value: @task.title, id: 'task-input-description' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
