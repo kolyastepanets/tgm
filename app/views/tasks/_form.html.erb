@@ -2,18 +2,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <%= form_for @task, remote: true do |f|   %>
-        <%= f.hidden_field :title, value: @task.title %>
         <%= f.hidden_field :service_id, value: @task.service.try(:id) %>
         <%= f.hidden_field :longtitude, value: @task.longtitude %>
         <%= f.hidden_field :latitude, value: @task.latitude %>
 
         <div class="modal-header">
-          <p class="modal-title new-task-modal__subtitle" id="newTaskLabel">new task</p>
-          <div>
-            <span id="modal-task-title"><%= task_full_title(@task) %></span> <span class="short-title"><%= @task.title %></span>
-          </div>
+          <p class="modal-title new-task-modal__subtitle">New task</p>
+          <div id="modal-task-title"><%= task_full_title(@task) %></div>
           <div id="modal-task-address"></div>
-          <%= f.button :submit, class: 'btn btn-primary run-task-btn' %>
+          <%= f.submit btn_value, class: 'btn btn-primary' %>
         </div>
         <div class="modal-body">
           <div class="task__form-info">

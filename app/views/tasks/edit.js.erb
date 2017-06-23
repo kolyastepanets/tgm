@@ -1,7 +1,6 @@
-$('#task-form').html("<%= j (render(partial: 'form')) %>");
-$('#task-services').html("<%= j (render(partial: 'services/services', locals: { id: @task.service.id })) %>");
+$('#task-form').html("<%= j render(partial: 'form', locals: { btn_value: 'UPDATE TASK' }) %>");
+$('#task-services').html("<%= j render(partial: 'services/services', locals: { id: @task.service.id }) %>");
 $('#task-form').animate({ "right": "470px" }, "slow" );
-$('.run-task-btn').html('UPDATE TASK')
 
 var taskLatlng;
 
@@ -10,4 +9,4 @@ taskLatlng = {
   lng: parseFloat("<%= @task.longtitude %>")
 };
 
-initMarker(taskLatlng)
+reDrawMarkers(taskLatlng)

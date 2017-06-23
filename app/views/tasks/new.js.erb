@@ -1,6 +1,5 @@
-$('#task-form').html("<%= j (render 'form') %>");
+$('#task-form').html("<%= j render(partial: 'form', locals: { btn_value: 'CREATE TASK' }) %>");
 $('#task-form').animate({ "right": "470px" }, "slow" )
-$('.run-task-btn').html('CREATE TASK')
 var dniproMenoraLat = 48.463819;
 var dniproMenoraLng = 35.053189;
 var taskLatlng;
@@ -10,4 +9,4 @@ taskLatlng = {
   lng: dniproMenoraLng
 };
 
-initMarker(taskLatlng);
+reDrawMarkers(taskLatlng);

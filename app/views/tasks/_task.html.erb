@@ -5,7 +5,7 @@
   <p class="task-title">
     I need a <%= task.service.classification %> to <%= task.service.name %>
   </p>
-  <p class="task-service hidden" service-name="<%= task.service.name %>" service-classification="<%= task.service.classification %>"></p>
+  <p class="task-service hidden" data-service-name="<%= task.service.name %>" data-service-classification="<%= task.service.classification %>"></p>
   <p class="task-run-btns">
     <%= link_to "EDIT", edit_task_path(task), class: "btn btn-primary", remote: true %>
     <%= link_to 'DELETE', task_path(task), class: "btn btn-primary", method: 'delete', remote: true, data: { confirm: 'Are you sure?' } %>

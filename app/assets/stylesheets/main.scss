@@ -9,8 +9,8 @@ ul {
   padding: 0;
 }
 #map-container {
-  min-height: 620px;
   width: 100%;
+  height: calc(100% - 54px);
 }
 #over_map {
   position: absolute;

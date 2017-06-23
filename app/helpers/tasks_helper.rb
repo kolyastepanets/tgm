@@ -4,6 +4,10 @@ module TasksHelper
   end
 
   def task_full_title(task)
-    "I need a #{task.service.classification} to #{task.service.name}" if task.service
+    if task.service
+      "I need a #{task.service.classification} to #{task.service.name}, #{task.title}"
+    else
+      task.title
+    end
   end
 end

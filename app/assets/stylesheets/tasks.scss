@@ -137,6 +137,8 @@
   border-radius: 40px;
 }
 #task-input-description {
-  min-width: 300px;
-  border-radius: 2px;
+  width: 100%;
+  &:focus {
+    outline:0;
+  }
 }
